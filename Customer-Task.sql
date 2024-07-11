@@ -1,19 +1,3 @@
---1. List all customers who live in Texas (use JOINs)
-
---2. Get all payments above $6.99 with the Customer's FullName
-
---3. Show all customers names who have made payments over $175(usesubqueries)
-
---4. List all customers that live in Nepal (use the citytable)
-
---5. Which staff member had the most transactions?
-
---6. How many movies of each rating arethere?
-
---7.Show all customers who have made a single payment above $6.99 (Use Subqueries)8. H
-
-
---1. List all customers who live in Texas (use JOINs)
 
 
 select first_name , last_name 
@@ -83,8 +67,8 @@ group by staff_id
 order by transaction_count Desc
 Limit 1;
 
---6. How many movies of each rating arethere?
---Note that , the moive table does not exist, I use film table instead
+--6. How many movies of each rating are there?
+
 select * from film
 
 Select rating, COUNT(*) 
@@ -102,6 +86,7 @@ on customer.customer_id=payment.customer_id
 where payment.amount > 6.99;
 
 --How many free rentals did our store give away
+
 select count(*) as free_rentals
 from payment
 where amount=0
